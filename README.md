@@ -1,6 +1,6 @@
 # KiwiHacks Nova Site
 
-Live at: [](https://nova.kiwihacks.org)
+Live at: [nova.kiwihacks.org](https://nova.kiwihacks.org)
 
 ### Install dependencies
 
