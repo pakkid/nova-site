@@ -4,14 +4,16 @@ import { city } from "../state"
 
 <div id="navbar">
   <img src="/logo-transparent.png" id="logo" alt="nova-logo" />
-  <button>Team</button>
-  <button>FAQ</button>
-  <div id="city-dropdown">
-    <p id="city-label">{city.get()}</p>
-    <div id="dropdown-content">
-      <button data-city="Auckland">Auckland</button>
-      <button data-city="Wellington">Wellington</button>
-      <button data-city="Christchurch">Christchurch</button>
+  <div id="nav-right">
+    <button>Team</button>
+    <button>FAQ</button>
+    <div id="city-dropdown">
+      <p id="city-label">{city.get()}</p>
+      <div id="dropdown-content">
+        <button data-city="Auckland">Auckland</button>
+        <button data-city="Wellington">Wellington</button>
+        <button data-city="Christchurch">Christchurch</button>
+      </div>
     </div>
   </div>
 </div>
@@ -32,30 +34,70 @@ import { city } from "../state"
 </script>
 
 <style>
-  #city-dropdown {
-    position: relative;
-    display: inline;
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: rgba(65, 82, 200, 0.3);
+    color: white;
   }
 
-  #city-dropdown p {
-    display: inline;
+  #nav-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  #nav-right button {
+    background-color: #4152C8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+  #city-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  #city-label {
+    display: block;
+    background-color: #4152C8;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+    white-space: nowrap;
   }
 
   #dropdown-content {
     top: 100%;
+    left: 0;
+    right: 0;
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
+    background-color: #4152C8;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   }
 
   #dropdown-content button {
     background-color: transparent;
     border: none;
-    color: black;
+    color: white;
     padding: 12px 16px;
     display: block;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+
+  #dropdown-content button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   #city-dropdown:hover #dropdown-content {
