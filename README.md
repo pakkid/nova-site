@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nova by KiwiHacks
+
+Marketing site for KiwiHacks Nova, New Zealand's first high school hackathon national tour. Three cities, three free 24 hour hackathons.
+
+Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com) (v4 via the `@tailwindcss/vite` plugin).
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies, then run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the printed local URL (default http://localhost:4321) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Action |
+|---|---|
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Build the static site to `dist/` |
+| `npm run preview` | Preview the production build locally |
 
-## Learn More
+## Routes
 
-To learn more about Next.js, take a look at the following resources:
+- `/` Auckland (default city)
+- `/auckland`, `/wellington`, `/christchurch` per-city pages
+- `/faq` frequently asked questions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+  components/   NovaLogo, NavBar, Footer, CityHome
+  data/         cities.ts (SIGNUP_URL, CITIES, default city)
+  layouts/      Layout.astro (html/body, nav + slot + footer)
+  pages/        index.astro, [city].astro, faq.astro
+  styles/       global.css (Tailwind + brand palette + Geist fonts)
+public/
+  nova-logo.png Nova wordmark
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+City names, dates, and the signup link all live in `src/data/cities.ts`. Update them there.

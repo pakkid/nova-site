@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
+/* Geist + Geist Mono via fontsource (replaces next/font). */
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
 :root {
   /* Nova brand palette, sampled from the design mockups. */
   --nova-bg: #0a0d28; /* near-black indigo page background */
   --nova-bg-bottom: #05071a; /* darker bottom for the subtle gradient */
   --nova-foreground: #ffffff;
+
+  /* Font variables, matching the old next/font setup. */
+  --font-geist-sans: "Geist Variable", Arial, Helvetica, sans-serif;
+  --font-geist-mono: "Geist Mono Variable", ui-monospace, monospace;
 }
 
 @theme inline {
@@ -27,7 +35,7 @@ body {
 }
 
 /*
- * PLACEHOLDER Nova wordmark styling — layered blue/purple/pink 3D look.
+ * PLACEHOLDER Nova wordmark styling: layered blue/purple/pink 3D look.
  * Approximates the Figma logo. Swap with the real export when available.
  */
 .nova-wordmark {

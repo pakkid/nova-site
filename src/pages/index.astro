@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CityHome from "../components/CityHome.astro";
+import { DEFAULT_CITY } from "../data/cities";
+
+// Root "/" defaults to Auckland. Other cities live at "/wellington", "/christchurch", "/auckland".
+---
+
+<Layout>
+  <CityHome city={DEFAULT_CITY} />
+</Layout>
