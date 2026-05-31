@@ -6,13 +6,16 @@ import { CITIES, DEFAULT_CITY_SLUG, cityBySlug } from "../data/cities";
 // On non-city routes (e.g. /faq) there is no active city, so the button reads "Select City".
 const pathname = Astro.url.pathname;
 const normalized = pathname.replace(/\/$/, "") || "/";
-const slug = normalized === "/" ? DEFAULT_CITY_SLUG : normalized.replace(/^\//, "");
+const slug =
+  normalized === "/" ? DEFAULT_CITY_SLUG : normalized.replace(/^\//, "");
 const activeCity = cityBySlug(slug) ?? null;
 ---
 
 <!-- The bar plus its bright pink gradient underline strip. -->
 <header class="sticky top-0 z-50 w-full">
-  <nav class="flex w-full flex-wrap items-center justify-between gap-3 bg-[#161a3d] px-5 py-2.5 sm:px-8">
+  <nav
+    class="flex w-full flex-wrap items-center justify-between gap-3 bg-[#161a3d] px-5 py-2.5 sm:px-8"
+  >
     {/* Left: Nova wordmark, links home */}
     <a href="/" class="flex items-center gap-2 no-underline">
       <NovaLogo class="h-8 sm:h-9" />
@@ -58,8 +61,7 @@ const activeCity = cityBySlug(slug) ?? null;
               stroke="white"
               stroke-width="2.5"
               stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
+              stroke-linejoin="round"></path>
           </svg>
         </button>
 
@@ -85,13 +87,17 @@ const activeCity = cityBySlug(slug) ?? null;
   </nav>
 
   {/* Bright pink gradient underline strip beneath the bar. */}
-  <div class="h-[3px] w-full bg-gradient-to-r from-[#ff5ea0] via-[#ff7ab3] to-[#ff5ea0]"></div>
+  <div
+    class="h-[3px] w-full bg-gradient-to-r from-[#ff5ea0] via-[#ff7ab3] to-[#ff5ea0]"
+  >
+  </div>
 </header>
 
 <script>
   // Select City dropdown: toggle open/close on click, close on outside-click.
   const root = document.querySelector<HTMLElement>("[data-city-dropdown]");
-  const toggle = document.querySelector<HTMLButtonElement>("[data-city-toggle]");
+  const toggle =
+    document.querySelector<HTMLButtonElement>("[data-city-toggle]");
   const panel = document.querySelector<HTMLElement>("[data-city-panel]");
   const chevron = document.querySelector<SVGElement>("[data-city-chevron]");
 

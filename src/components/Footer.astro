@@ -31,7 +31,10 @@ const SOCIALS: { name: string; href: string; path: string }[] = [
 
 <footer class="relative mt-24 bg-[#0c1030]">
   {/* Pink gradient top strip, echoing the nav underline. */}
-  <div class="h-[3px] w-full bg-gradient-to-r from-[#ff5ea0] via-[#ff7ab3] to-[#ff5ea0]"></div>
+  <div
+    class="h-[3px] w-full bg-gradient-to-r from-[#ff5ea0] via-[#ff7ab3] to-[#ff5ea0]"
+  >
+  </div>
 
   {/* Closing CTA band */}
   <div class="mx-auto max-w-5xl px-5 pt-16 text-center">
@@ -39,7 +42,8 @@ const SOCIALS: { name: string; href: string; path: string }[] = [
       What are you waiting for?
     </h2>
     <p class="mx-auto mt-3 max-w-xl text-base text-white/75">
-      Join us for an unforgettable weekend of building, creativity, and new friends.
+      Join us for an unforgettable weekend of building, creativity, and new
+      friends.
     </p>
     <a
       href={SIGNUP_URL}
@@ -52,7 +56,9 @@ const SOCIALS: { name: string; href: string; path: string }[] = [
   {/* Footer body */}
   <div class="mx-auto mt-14 max-w-5xl px-5 pb-12 text-center">
     <p class="text-sm text-white/80">&copy; 2026 KiwiHacks</p>
-    <p class="mt-1 text-sm text-white/80">Built with &#10084;&#65039; by teens, for teens.</p>
+    <p class="mt-1 text-sm text-white/80">
+      Built with &#10084;&#65039; by teens, for teens.
+    </p>
 
     <a
       href={GITHUB_CODE}
@@ -70,7 +76,12 @@ const SOCIALS: { name: string; href: string; path: string }[] = [
             aria-label={s.name}
             class="text-white/55 transition-colors hover:text-[#ff7ab3]"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="h-6 w-6"
+              aria-hidden="true"
+            >
               <path d={s.path} />
             </svg>
           </a>
@@ -80,7 +91,9 @@ const SOCIALS: { name: string; href: string; path: string }[] = [
 
     {/* Important links */}
     <div class="mt-10">
-      <h3 class="text-sm font-semibold tracking-wide text-white/90">Important Links</h3>
+      <h3 class="text-sm font-semibold tracking-wide text-white/90">
+        Important Links
+      </h3>
       <a
         href={CODE_OF_CONDUCT}
         class="mt-2 inline-block text-sm text-white/70 underline-offset-4 hover:text-white hover:underline"

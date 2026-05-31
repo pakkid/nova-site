@@ -28,7 +28,12 @@ html {
 
 body {
   /* Subtle vertical gradient to darker at the bottom. */
-  background: linear-gradient(180deg, var(--nova-bg) 0%, var(--nova-bg) 55%, var(--nova-bg-bottom) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--nova-bg) 0%,
+    var(--nova-bg) 55%,
+    var(--nova-bg-bottom) 100%
+  );
   background-attachment: fixed;
   color: var(--nova-foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
@@ -39,12 +44,19 @@ body {
  * Approximates the Figma logo. Swap with the real export when available.
  */
 .nova-wordmark {
-  font-family: var(--font-geist-sans), "Arial Rounded MT Bold", Arial, sans-serif;
+  font-family:
+    var(--font-geist-sans), "Arial Rounded MT Bold", Arial, sans-serif;
   letter-spacing: -0.02em;
 }
 
 .nova-letter {
-  background: linear-gradient(180deg, #6f7bff 0%, #5a5fe0 42%, #2a2f7a 60%, #e36fae 100%);
+  background: linear-gradient(
+    180deg,
+    #6f7bff 0%,
+    #5a5fe0 42%,
+    #2a2f7a 60%,
+    #e36fae 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
